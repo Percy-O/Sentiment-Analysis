@@ -1,16 +1,18 @@
-Based on the repository structure, your uploaded notebook file `Sentiment_Analysis_Glo.ipynb`, and the screenshot showing the complete dataset and file hierarchy, here’s a polished and professional `README.md` file tailored for your GitHub project:
 
----
+# 📊 Sentiment Analysis on GLO Telecommunication Feedback
 
-# 📊 Sentiment Analysis on GLO Telecommunication Customers
+This project conducts a comprehensive **sentiment analysis** on public complaints and customer feedback collected from GLO Nigeria subscribers. Using machine learning and NLP techniques, the project classifies user comments into **Positive**, **Neutral**, or **Negative** sentiments, across four key service categories:
 
-This project performs **sentiment analysis** on customer feedback and complaints about **GLO Nigeria**, focusing on key service categories: **customer service**, **data plans**, **quality of service (QoS)**, and **tariff plans**. The goal is to extract actionable insights from user opinions to help improve customer experience and service delivery.
+* **Customer Service**
+* **Data Plan**
+* **Quality of Service (QoS)**
+* **Tariff Plan**
 
 ---
 
 ## 🧠 Project Objective
 
-To analyze and classify the sentiments (positive, negative, neutral) expressed in textual reviews provided by GLO customers using **Natural Language Processing (NLP)** and **Machine Learning** techniques.
+To gain deep insight into the perception of GLO services by analyzing textual customer comments, and generate data-driven recommendations for enhancing customer satisfaction.
 
 ---
 
@@ -19,131 +21,149 @@ To analyze and classify the sentiments (positive, negative, neutral) expressed i
 ```
 Sentiment-Analysis/
 │
-├── Sentiment_Analysis_Glo.ipynb             # Main notebook: complete analysis pipeline
-├── Sentiment_Machine_Learning_Approach.ipynb# Alternate ML workflow
-├── Sentiment_Model.ipynb                    # Model versioning and evaluation
+├── Sentiment_Analysis_Glo.ipynb             # Main notebook with analysis and visualizations
+├── Sentiment_Machine_Learning_Approach.ipynb# Alternate ML model implementations
+├── Sentiment_Model.ipynb                    # Model tuning and versioning
 │
-├── Glo_customer_services_comment.csv        # Scraped data on customer service
-├── Glo_data_plan_comment.csv                # Scraped data on data plans
-├── Glo_qos_comment.csv                      # Scraped data on quality of service
-├── Glo_tariff_plan_comment.csv              # Scraped data on tariff plans
+├── Glo_customer_services_comment.csv        # Customer service comments
+├── Glo_data_plan_comment.csv                # Data plan feedback
+├── Glo_qos_comment.csv                      # Comments on quality of service
+├── Glo_tariff_plan_comment.csv              # Tariff plan complaints
 │
-├── customer.csv / customers.csv / etc.      # Duplicates and variations of raw scraped data
-├── quality.csv / qualities.csv              # Raw service-related datasets
-├── dataplan.csv / datas_csv                 # Raw datasets on data plan issues
-├── tariffplan.csv / tarrif.csv              # Raw tariff data
 ├── README.md                                # Documentation
 ```
 
 ---
 
-## 🔍 Data Overview
+## 📊 Sentiment Distribution Results (by Category)
 
-Collected and cleaned user-generated textual data from:
+### 🧑‍💼 Customer Service
 
-* GLO customer service complaints
-* GLO data plan feedback
-* GLO tariff plan reactions
-* General QoS concerns
+* **Negative:** 152 (70.3%)
+* **Positive:** 48 (22.2%)
+* **Neutral:** 16 (7.4%)
 
-Each `.csv` contains:
-
-* **`comment`**: textual feedback
-* **`label`**: (manually or automatically assigned) sentiment category
+> 📌 Majority of feedback highlights **poor responsiveness**, **rude agents**, and **unresolved complaints**.
 
 ---
 
-## ⚙️ Tools & Technologies
+### 📶 Data Plan
+
+* **Negative:** 159 (72.9%)
+* **Positive:** 45 (20.6%)
+* **Neutral:** 14 (6.4%)
+
+> 📌 Key concerns include **fast data depletion**, **expensive bundles**, and **poor value for money**.
+
+---
+
+### 📡 Quality of Service (QoS)
+
+* **Negative:** 160 (72.7%)
+* **Positive:** 43 (19.5%)
+* **Neutral:** 17 (7.7%)
+
+> 📌 Users frequently complain about **slow internet**, **frequent call drops**, and **network instability**.
+
+---
+
+### 💰 Tariff Plan
+
+* **Negative:** 166 (76.1%)
+* **Positive:** 38 (17.4%)
+* **Neutral:** 14 (6.4%)
+
+> 📌 Users expressed dissatisfaction with **unfavorable call rates**, **billing errors**, and **lack of transparency**.
+
+---
+
+## 🔧 Tools & Technologies Used
 
 * **Python**
-* **Pandas / NumPy** – data preprocessing
-* **NLTK / SpaCy / Scikit-learn** – NLP and feature extraction
-* **TF-IDF Vectorizer** – text representation
-* **Logistic Regression, Naive Bayes, SVM** – classification algorithms
-* **Matplotlib / Seaborn / WordCloud** – data visualization
+* **Pandas, NumPy** – data cleaning and structuring
+* **Scikit-learn** – model training (Logistic Regression, Naive Bayes)
+* **NLTK** – text processing
+* **TF-IDF** – feature vectorization
+* **Matplotlib / Seaborn** – data visualization
+* **WordCloud** – visual sentiment keywords
 
 ---
 
 ## 🧪 Workflow Summary
 
-### 1. 📥 Data Preprocessing
+### 1. Data Preprocessing
 
-* Data cleaning (removing special characters, stopwords, lowercasing)
-* Tokenization & lemmatization
-* Label encoding and null handling
+* Cleaned and normalized text
+* Tokenization, stopword removal, lemmatization
+* Labeled datasets (positive, neutral, negative)
 
-### 2. 🔠 Text Vectorization
+### 2. Vectorization
 
-* Applied **TF-IDF Vectorizer** to transform text into numerical format
+* TF-IDF applied to transform text into features
 
-### 3. 🧠 Model Training
+### 3. Model Building
 
-Trained multiple classification models:
+* Logistic Regression & Naive Bayes used for classification
+* Model tested on all 4 categories independently
 
-* **Logistic Regression**
-* **Naive Bayes**
-* **Support Vector Machine (SVM)**
+### 4. Evaluation
 
-### 4. 📊 Evaluation Metrics
-
-Each model was evaluated using:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* Confusion Matrix
+* Accuracy, Precision, Recall, F1-score
+* Confusion matrix and sentiment distribution visualized
 
 ---
 
-## 📈 Visualizations
+## 📈 Insights & Recommendations
 
-* WordCloud of frequently used terms
-* Sentiment distribution bar plots
-* Model accuracy comparison
-* Confusion matrix heatmaps
+* Sentiments are **heavily skewed toward negative** across all categories.
+* GLO’s **customer experience strategy needs revamping**, especially around:
 
----
+  * Agent support training
+  * Transparent billing
+  * Better internet service coverage
 
-## ✅ Results
-
-* Best performing model: **\[e.g., Logistic Regression]** with an F1-score of \~**\[X]**
-* Dominant sentiment in customer feedback: **\[e.g., Negative (62%)]**
-* Highlighted recurring pain points in QoS and data pricing
+> 🎯 **Targeted service improvements** can reduce churn and improve brand perception.
 
 ---
 
 ## 🚀 How to Use
 
-1. Clone the repo:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/Percy-O/Sentiment-Analysis.git
    cd Sentiment-Analysis
    ```
 
-2. Install required libraries:
+2. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Open the main notebook:
+3. Launch the main notebook:
 
    ```bash
    jupyter notebook Sentiment_Analysis_Glo.ipynb
    ```
 
-4. Run each cell step-by-step to explore preprocessing, model training, and results.
+4. Step through the cells to view preprocessing, analysis, and final results.
 
 ---
 
-## 🧠 Future Enhancements
+## 📦 Requirements
 
-* Integrate **deep learning models** (LSTM, BERT) for better semantic understanding
-* Develop a **web dashboard** to upload new comments and see predicted sentiments in real time
-* Extend analysis to **multi-language feedback**
-* Build **topic modeling** around complaint categories
+You can create a `requirements.txt` like:
+
+```
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+wordcloud
+nltk
+```
 
 ---
 
@@ -153,6 +173,3 @@ Each model was evaluated using:
 **GitHub:** [@Percy-O](https://github.com/Percy-O)
 **Email:** [owoeyepercyolawale@gmail.com](mailto:owoeyepercyolawale@gmail.com)
 
----
-
-Would you like me to generate the actual markdown file (`README.md`) for download or include a `requirements.txt` based on the notebook imports?
